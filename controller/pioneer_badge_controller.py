@@ -8,18 +8,18 @@ client = bigquery.Client()
 pioneer_item_id = uuid.uuid4()
 
 # Função para INSERT
-def insert_item(pioneer_item_name, pioneer_item_cost, pioneer_item_pre_requisits):
-    rows = [{
-        'pioneer_item_id': str(pioneer_item_id),
-        'pioneer_item_name': pioneer_item_name,
-        'pioneer_item_cost': pioneer_item_cost,
-        'pioneer_item_pre_requisits': pioneer_item_pre_requisits
-    }]
+def insert_item(pioneer_item_json):
 
-    errors = client.insert_rows_json(connection(), rows)
+    if isinstance(pioneer_item_json, dict):
+        pioneer_item_json = [pioneer_item_json]
+
+    for item in pioneer_item_json:
+        item['pioneer_item_id'] = str(uuid.uuid4())
+
+    errors = client.insert_rows_json(connection(), pioneer_item_json)
 
     if not errors:
-        print(f"O item {pioneer_item_name}, com valor de {pioneer_item_cost} foi inserido com sucesso.")
+        print(f"Dado(s) inserido(s) com sucesso.")
     else:
         print(f"Erro ao inserir o item", errors)
 
@@ -43,7 +43,9 @@ def select_by_id(id):
         ]
     )
     query_job = client.query(query, job_config=job_config)
+
     results = query_job.result()
+
     rows = [dict(row) for row in results]
     json_data = json.dumps(rows, ensure_ascii=False,indent=2)
 
