@@ -12,6 +12,6 @@ def connection():
 	PROJECT_ID = os.environ['PROJECT_ID']
 	DATABASE_ID = os.environ['DATABASE_ID']
 	TABLE_ID = os.environ['TABLE_ID']
-	TABLE_REF = f"{PROJECT_ID}.{DATABASE_ID}.{TABLE_ID}"
+	TABLE_REF = f"`{PROJECT_ID}.{DATABASE_ID}.{TABLE_ID}`"
 
 	return TABLE_REF
