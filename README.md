@@ -52,3 +52,14 @@
 client = bigquery.Client()
 print("✅ Autenticação bem-sucedida com o projeto:", client.project)
 </code></pre>
+
+<H3> Funções </H3>
+Inserir JSON:
+<code> inser_item(json) </code>
+
+Listar todos:
+<code> list_all() </code>
+
+Listar por ID:
+<pre><code>@id = STRING
+select_by_id(id) </code></pre>

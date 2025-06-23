@@ -6,6 +6,7 @@ from controller.pioneer_badge_controller import (
 
 if __name__ == "__main__":
 
+#	DADOS EM JSON
 	dados = [
 		{
 					'pioneer_item_name': 'Resquício do Governante Selado (Vinculado)',
@@ -24,11 +25,11 @@ if __name__ == "__main__":
 		}
 	]
 
-# 	INSERT
-# 	Função para inserir dados na tabela.
-# 	insert_item(dados)
+#	INSERT
+#	insert_item(dados)
 
-# 	SELECT
-# 	print(list_all()) #Função que retorna o conteúdo da tabela
+#	SELECT
+#	print(list_all()) #Função que retorna o conteúdo da tabela
 
-	# print(select_by_id('6784a50c-ebbd-4561-acc1-bdbe329000cd'))
+#		SELECT BY ID
+#	print(select_by_id('6784a50c-ebbd-4561-acc1-bdbe329000cd'))
