@@ -3,9 +3,7 @@
 
 <H3> Instalar as bibliotecas necessárias: </H3>
 
-<code> 
-    pip install google-cloud-bigquery 
-</code>
+<code>pip install google-cloud-bigquery</code>
 
 <H3> Permissão para acessar o BigQuery </H3>
 <ol>
@@ -38,12 +36,8 @@
 
 <H5> Definindo Variável de ambiente no Windows </H5>
 <ul> 
-    <li> No CMD</li>
-    <code> set GOOGLE_APPLICATION_CREDENTIALS=C:\caminho\para\chave-bigquery.json
- </code>
-    <li> No PowerShell</li>
-    <code> $env:GOOGLE_APPLICATION_CREDENTIALS="C:\caminho\para\chave-bigquery.json"
- </code>
+    <li> No CMD</li><code>set GOOGLE_APPLICATION_CREDENTIALS=C:\caminho\para\chave-bigquery.json</code>
+    <li> No PowerShell</li><code>$env:GOOGLE_APPLICATION_CREDENTIALS="C:\caminho\para\chave-bigquery.json"</code>
 </ul>
 
  <h4>Após realizar esses passos, pode usar o seguinte código para testar a conexão: </h4> 
